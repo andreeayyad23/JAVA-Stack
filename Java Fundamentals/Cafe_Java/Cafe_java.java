@@ -8,10 +8,10 @@ public class Cafe_java {
         String displayTotalMessage = "Your total is $";
         
         // Menu variables (add yours below)
-        double mochaPrice = 4;
-        double dripCoffeePrice = 3;
-        double lattePrice = 5;
-        double cappuccinoPrice = 6;
+        double mochaPrice = 7;
+        double dripCoffeePrice = 8;
+        double lattePrice = 9;
+        double cappuccinoPrice = 10;
     
         // Customer name variables (add yours below)
         String customer1 = "Cindhuri";
@@ -20,8 +20,8 @@ public class Cafe_java {
         String customer4 = "Noah";
     
         // Order completions (add yours below)
-        boolean isReadyOrder1 = false;
-        boolean isReadyOrder2 = true;
+        boolean isReadyOrder1 = true;
+        boolean isReadyOrder2 = false;
         boolean isReadyOrder3 = true;
         boolean isReadyOrder4 = false;
     
