@@ -15,7 +15,7 @@ public class AlfredTest {
         String alexisTest = alfredBot.respondBeforeAlexis("Alexis! Play some low-fi beats.");
         String alfredTest = alfredBot.respondBeforeAlexis("I can't find my yo-yo. Maybe Alfred will know where it is.");
         String notRelevantTest = alfredBot.respondBeforeAlexis("Maybe that's what Batman is about. Not winning. But failing.");
-        String foodLove = alfredBot.foodLove("I love to order food!");
+        String foodLove = alfredBot.foodLove(      "I love to order food!        ");
 
         // Print the greetings to test.
         System.out.println(testGreeting);
