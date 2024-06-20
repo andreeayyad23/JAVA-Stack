@@ -38,16 +38,18 @@ public ArrayList<String> reportSecurityIncidents() {
 
 // TO DO: Implement HIPAACompliantUser!
 @Override
-public boolean assignPin(int pin) {
-
-	// check if the pin is more than 6 digits
-	double numberOfDigits = Math.floor(Math.log10(pin) + 1);
-	if (numberOfDigits < 6.0) {
-		return false;
-	}
-	this.pin = pin;
-	return true;
-}
+    public boolean assignPin(int pin) {
+    	// TODO Auto-generated method stub
+    	String pinString = Integer.toString(pin); 
+		if (pinString.length() == 6) {
+			this.setPin(pin);
+			return true;
+		} else {
+			
+			this.authIncident();
+			return false;
+		}
+    }
 
 @Override
 public boolean accessAuthorized(Integer confirmedAuthID) {
