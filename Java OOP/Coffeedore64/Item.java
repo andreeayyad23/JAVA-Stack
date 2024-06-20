@@ -5,11 +5,13 @@ public class Item {
 
     
     public Item(int intIndex, String name, double price){
+        this.intIndex = intIndex;
         this.name = name;
         this.price = price;
-        this.intIndex = intIndex;
     }
-    
+
+
+
     // Name Getter
     public String getName() {
         return name;

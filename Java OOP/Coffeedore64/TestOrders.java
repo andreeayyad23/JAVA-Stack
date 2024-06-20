@@ -1,7 +1,7 @@
 public class TestOrders {
     public static void main(String[] args) {
-        CoffeeKiosk TestingOrders = new CoffeeKiosk();
 
+        CoffeeKiosk TestingOrders = new CoffeeKiosk();
         // Building and displaying the menu
         Item item1 = new Item(0, "banana", 2.00);
         Item item2 = new Item(1, "coffee", 1.50);

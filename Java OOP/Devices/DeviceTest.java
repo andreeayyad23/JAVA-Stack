@@ -3,15 +3,10 @@ public class DeviceTest {
         Phone phone = new Phone(); 
         phone.makeCall();
         phone.makeCall();
-        phone.playGame();
-        phone.playGame();
-        phone.playGame();
-        phone.playGame();
-        phone.playGame();
-        phone.playGame();
         phone.makeCall();
-        phone.makeCall();
-        phone.makeCall();
+        phone.playGame();
+        phone.playGame();
+        phone.charge();
         System.out.println(phone.getBattery());
     }
 }   

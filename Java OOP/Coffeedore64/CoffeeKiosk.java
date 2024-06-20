@@ -5,7 +5,7 @@ public class CoffeeKiosk {
     private ArrayList<Item> menu;
     private ArrayList<Order> orders;
 
-    // constructor
+    // constructor //initialize
     public CoffeeKiosk() {
         menu = new ArrayList<Item>();
         orders = new ArrayList<Order>();
@@ -31,8 +31,6 @@ public class CoffeeKiosk {
         Order order1 = new Order();
 
         while(!itemNumber.equals("q")) {
-
-
 
             if(itemNumber.equals("0")){
                 Item item0 = new Item(0, "banana", 2.00);
