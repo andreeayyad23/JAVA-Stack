@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+}
+#container{
+	text-align: center;
+	margin-top: 100px;
+}
+a{
+	margin: 20px;
+	
+}
+.date {
+	color: #2b78e4;
+}
+.time {
+	color: #2b78e4;
+}
