@@ -9,6 +9,7 @@ public class MammalTest {
         gorilla.displayEnergy();
 
         Bat bat = new Bat();
+        bat.displayEnergy();
         bat.attackTown();
         bat.attackTown();
         bat.eatHumans();
