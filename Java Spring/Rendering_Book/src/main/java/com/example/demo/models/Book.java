@@ -1,5 +1,10 @@
-package com.mvc.demo.models;
+package com.example.demo.models;
+
 import java.util.Date;
+
+import org.antlr.v4.runtime.misc.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,9 +14,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="books")
 public class Book {
@@ -46,11 +49,22 @@ public class Book {
         this.numberOfPages = pages;
     }
     
-    public Long getId() {
+    // other getters and setters removed for brevity
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+	public Long getId() {
 		return id;
 	}
-	
-	public String getTile() {
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
@@ -74,15 +88,17 @@ public class Book {
 	public void setNumberOfPages(Integer numberOfPages) {
 		this.numberOfPages = numberOfPages;
 	}
-    @PrePersist
-    protected void onCreate(){
-        this.createdAt = new Date();
-    }
-    @PreUpdate
-    protected void onUpdate(){
-        this.updatedAt = new Date();
-    }
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 }
-
-
 
