@@ -11,12 +11,14 @@ import com.mvc.demo.repositories.BookRepository;
 @Service
 public class BookService {
 
+
 	private final BookRepository bookRepository;
 
 	public BookService(BookRepository bookRepository) {
 		this.bookRepository = bookRepository;
 	}
 
+	
 	// returns all the books
 	public List<Book> allBooks() {
 		return bookRepository.findAll();
