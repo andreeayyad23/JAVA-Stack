@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+
+.welcome{
+	color:#9900ff;
+}
+.error{
+	color: #ff2626;
+	font-size: 14px;
+}
