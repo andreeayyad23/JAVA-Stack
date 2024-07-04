@@ -34,13 +34,15 @@
             </div>
         </div>
         <div>
+        <c:if test="${books.user.id == userId}">
         <form action="/delete/${books.id}" method="post">
                         <input type="hidden" name="_method" value="delete">
                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                     </form>
                         <a href="/books/${books.id}/edit"><button type="submit" class="btn btn-sm btn-danger">Edit</button></a>
-         </div>
-                    
+                  </c:if>
+         
+         </div>                    
 </div>
 </body>
 </html>
