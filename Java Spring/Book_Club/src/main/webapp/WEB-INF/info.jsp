@@ -18,29 +18,30 @@
     </div>
         <div class="card mb-4">
             <div class="card-header">
-                <h2 class="card-title"><c:out value="${books.title}" /></h2>
+                <h2 class="card-title"><c:out value="${book.title}" /></h2>
             </div>
             <div class="card-body">
                 <h5 class="card-subtitle mb-2 text-muted">
-                    <c:out value="${books.user.userName}" /> read <c:out value="${books.title}" /> by <c:out value="${books.author_name}" />.
+                    <c:out value="${book.user.userName}" /> read <c:out value="${book.title}" /> by <c:out value="${book.author_name}" />.
                 </h5>
                 <p class="card-text">
-                    Here are <c:out value="${books.user.userName}" />'s thoughts:
+                    Here are <c:out value="${book.user.userName}" />'s thoughts:
                 </p>
                 <hr>
                 <p class="card-text">
-                    <c:out value="${books.thoughts}" />
+                    <c:out value="${book.thoughts}" />
                 </p>
             </div>
         </div>
         <div>
-        <c:if test="${books.user.id == userId}">
-        <form action="/delete/${books.id}" method="post">
+        <c:if test="${book.user.id == userId}">
+        <form action="/delete/${book.id}" method="post">
                         <input type="hidden" name="_method" value="delete">
                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                     </form>
-                        <a href="/books/${books.id}/edit"><button type="submit" class="btn btn-sm btn-danger">Edit</button></a>
-                  </c:if>
+                                      </c:if>
+                                            <a href="/books/${book.id}/edit"><button type="submit" class="btn btn-sm btn-danger">Edit</button></a>
+                    
          
          </div>                    
 </div>

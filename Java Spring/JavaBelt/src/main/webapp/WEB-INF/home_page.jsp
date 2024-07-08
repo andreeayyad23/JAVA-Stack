@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- c:out ; c:forEach etc. --> 
@@ -12,7 +13,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Read Share</title>
+    <title>Dashboard</title>
     
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -21,35 +22,39 @@
 </head>
 <body>
 	<div class=" d-flex justify-content-between m-5">
-		<h1 class="welcome">Welcome ${user.userName}!!!</h1>
+		<h1 class="welcome2">${user.userName}.</h1>
 		<div>
-			<a href="/logout" class="btn btn-outline-danger"> Logout</a>			
-		</div>
-		<div>			
-		<a href="/books/new" class="btn btn-outline-danger"> + Add a to my shelf!</a>
+			<a href="/logout" class="btn btn-outline-danger"> Logout</a>
 		</div>
 	</div>
-	    <h2 class="mt-5">Books From everyone's shelves:</h2>
+		<h3>Course Scheduale</h3>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>title</th>
-                <th>Author Name:</th>
-                <th>Posted By:</th>
+                <th>Class Name</th>
+                <th>Instructor</th>
+                <th>Weekend</th>
+                <th>Price</th>
+                
             </tr>
         </thead>
         <tbody>
-        <c:forEach var="book" items="${books}">
+        <c:forEach var="yoga" items="${yogas}">
             <tr>
-                <td>${book.id}</td>
-                <td><a href="/books/${book.id}"><c:out value="${book.title}" /></a></td>
-                <td><c:out value="${book.author_name}" /></td>
-                <td><c:out value="${book.user.userName}" /></td>
+                <td><a href="/classes/${yoga.id}"><c:out value="${yoga.name}" /></a><c:if test="${yoga.user.id == userId}">
+ 
+                        <a href="/classes/${yoga.id}/edit"><button type="submit" class="btn btn-sm btn-danger">Edit</button></a>
+                  </c:if></td>
+                <td><c:out value="${yoga.user.userName}" /></td>
+                <td><c:out value="${yoga.weekday}" /></td>
+                <td>$ <c:out value="${yoga.price}" /></td>
+                
             </tr>
         </c:forEach>
         </tbody>
     </table>
+<p><a href="/classes/new" class="btn btn-danger">+new course</a></p>
+	
 
 </body>
 </html>
